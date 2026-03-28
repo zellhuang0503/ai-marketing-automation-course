@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 自動化教學平台 — 案例拆解式自動化教學法</title>
+  <meta name="description" content="互動式教學平台：從案例拆解到實戰建構，掌握 AI 自動化流程的核心知識。">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <button class="hamburger-btn" id="hamburger">☰</button>
+    <span class="mobile-logo">AI 自動化教學</span>
+    <div style="width:40px;"></div>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-layout">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🤖 AI 自動化教學平台</div>
+        <div class="sidebar-subtitle">案例拆解式自動化教學法</div>
+      </div>
+
+      <!-- Progress -->
+      <div class="sidebar-progress">
+        <div class="progress-label">
+          <span>學習進度</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div style="padding: var(--space-3) var(--space-4);" id="sidebar-search"></div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">首頁</div>
+        <div class="nav-item" data-route="home" onclick="App.navigate('home')">
+          <span class="nav-icon">🏠</span> 課程總覽
+          <span class="nav-check">✓</span>
+        </div>
+
+        <div class="nav-section-title">核心概念</div>
+        <div class="nav-item" data-route="concept-api" onclick="App.navigate('concept-api')">
+          <span class="nav-icon">🍽️</span> API
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-webhook" onclick="App.navigate('concept-webhook')">
+          <span class="nav-icon">📞</span> Webhook
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-mcp" onclick="App.navigate('concept-mcp')">
+          <span class="nav-icon">🔑</span> MCP
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-browser" onclick="App.navigate('concept-browser')">
+          <span class="nav-icon">🌐</span> Browser 自動化
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-skill" onclick="App.navigate('concept-skill')">
+          <span class="nav-icon">📋</span> Skill
+          <span class="nav-check">✓</span>
+        </div>
+
+        <div class="nav-section-title">進階知識</div>
+        <div class="nav-item" data-route="concept-markdown" onclick="App.navigate('concept-markdown')">
+          <span class="nav-icon">📝</span> Markdown 格式
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-rss" onclick="App.navigate('concept-rss')">
+          <span class="nav-icon">📡</span> RSS 與網頁爬蟲
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-json" onclick="App.navigate('concept-json')">
+          <span class="nav-icon">📦</span> JSON 結構化
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-ifelse" onclick="App.navigate('concept-ifelse')">
+          <span class="nav-icon">🔀</span> 條件判斷 If-Else
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="concept-database" onclick="App.navigate('concept-database')">
+          <span class="nav-icon">🗄️</span> 資料庫查詢
+          <span class="nav-check">✓</span>
+        </div>
+
+        <div class="nav-section-title">案例拆解</div>
+        <div class="nav-item" data-route="case-1" onclick="App.navigate('case-1')">
+          <span class="nav-icon">📰</span> 自動晨報機器人
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="case-2" onclick="App.navigate('case-2')">
+          <span class="nav-icon">📝</span> 多平台發文助手
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="case-3" onclick="App.navigate('case-3')">
+          <span class="nav-icon">💬</span> 客戶私訊分流
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="case-4" onclick="App.navigate('case-4')">
+          <span class="nav-icon">📊</span> 競品社群監測
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="case-5" onclick="App.navigate('case-5')">
+          <span class="nav-icon">📈</span> 智能排程助手
+          <span class="nav-check">✓</span>
+        </div>
+
+        <div class="nav-section-title">學習工具</div>
+        <div class="nav-item" data-route="automation-map" onclick="App.navigate('automation-map')">
+          <span class="nav-icon">🗺️</span> 自動化地圖
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="dialog-skills" onclick="App.navigate('dialog-skills')">
+          <span class="nav-icon">💬</span> 與 AI 對話技巧
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="capabilities" onclick="App.navigate('capabilities')">
+          <span class="nav-icon">🎯</span> 程式能做什麼？
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="workshop" onclick="App.navigate('workshop')">
+          <span class="nav-icon">📝</span> 逆向工程工作坊
+          <span class="nav-check">✓</span>
+        </div>
+        <div class="nav-item" data-route="progress" onclick="App.navigate('progress')">
+          <span class="nav-icon">📊</span> 我的學習進度
+          <span class="nav-check">✓</span>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="page-content">
+      <!-- Content rendered by JS -->
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/content.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Inject search bar into sidebar
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchContainer = document.getElementById('sidebar-search');
+      if (searchContainer) searchContainer.innerHTML = Search.renderSearchBar();
+    });
+  </script>
+</body>
+</html>

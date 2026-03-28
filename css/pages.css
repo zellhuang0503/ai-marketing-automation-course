@@ -1,0 +1,355 @@
+/* ========================================
+   頁面特定樣式
+   ======================================== */
+
+/* ── 首頁 Hero ── */
+.hero {
+  text-align: center;
+  padding: var(--space-16) 0;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent-glow);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-6);
+}
+
+.hero h1 {
+  position: relative;
+  font-size: var(--text-5xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-6);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-10);
+  margin-top: var(--space-10);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ── 路徑圖 (Learning Path) ── */
+.learning-path {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: var(--space-10) 0;
+  flex-wrap: wrap;
+}
+
+.path-node {
+  text-align: center;
+  padding: var(--space-5);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  width: 200px;
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: pointer;
+}
+
+.path-node:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.path-node-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+}
+
+.path-node-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.path-node-hours {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.path-arrow {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  padding: 0 var(--space-3);
+}
+
+/* ── 概念頁面 ── */
+.concept-hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.concept-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+}
+
+.concept-hero h1 {
+  margin-bottom: var(--space-3);
+}
+
+.concept-hero p {
+  font-size: var(--text-base);
+}
+
+/* 生活化比喻區塊 */
+.analogy-block {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin: var(--space-8) 0;
+  position: relative;
+}
+
+.analogy-block::before {
+  content: '💡';
+  position: absolute;
+  top: -16px;
+  left: var(--space-5);
+  font-size: 1.5rem;
+  background: var(--color-bg-primary);
+  padding: 0 var(--space-2);
+}
+
+.analogy-block .analogy-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.analogy-block blockquote {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--color-accent-primary);
+}
+
+/* ── 案例頁面 ── */
+.case-header {
+  padding: var(--space-8);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-8);
+}
+
+.case-header .case-num {
+  font-size: var(--text-xs);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.case-header h1 {
+  margin-bottom: var(--space-3);
+}
+
+.case-header .case-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+/* ── 專案頁面 ── */
+.project-header {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.project-flow {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+  overflow-x: auto;
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: max-content;
+  padding: var(--space-4);
+}
+
+.flow-node {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.flow-arrow {
+  color: var(--color-text-muted);
+  font-size: var(--text-xl);
+}
+
+/* ── 地圖頁面 ── */
+.automation-map {
+  margin: var(--space-8) 0;
+}
+
+.map-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.map-block {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.map-block:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.map-block-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.map-block-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.map-connectors {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-10);
+  margin: var(--space-2) 0;
+  color: var(--color-text-muted);
+}
+
+/* ── 進度頁面 ── */
+.progress-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.progress-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.progress-card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.progress-card-bar {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: hidden;
+  margin-top: var(--space-3);
+}
+
+.progress-card-fill {
+  height: 100%;
+  background: var(--color-accent-gradient);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: var(--text-3xl); }
+  .hero-stats { flex-direction: column; gap: var(--space-4); }
+  .learning-path { flex-direction: column; }
+  .path-arrow { transform: rotate(90deg); }
+  .concept-hero { flex-direction: column; text-align: center; }
+  .map-row { grid-template-columns: 1fr; }
+}
