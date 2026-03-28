@@ -1,23 +1,26 @@
 /* ========================================
-   頁面特定樣式
+   頁面特定樣式（淺色優雅主題）
    ======================================== */
 
 /* ── 首頁 Hero ── */
 .hero {
   text-align: center;
-  padding: var(--space-16) 0;
+  padding: var(--space-16) 0 var(--space-12);
   position: relative;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: -100px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(139, 92, 246, 0.05) 40%,
+    transparent 70%);
   pointer-events: none;
 }
 
@@ -26,34 +29,41 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  background: var(--color-accent-glow);
-  border: 1px solid rgba(88, 166, 255, 0.2);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   color: var(--color-accent-primary);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: var(--space-6);
+  letter-spacing: 0.03em;
 }
 
 .hero h1 {
   position: relative;
   font-size: var(--text-5xl);
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: var(--space-6);
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
 }
 
 .hero-subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
-  max-width: 600px;
+  color: var(--color-text-muted);
+  max-width: 560px;
   margin: 0 auto var(--space-8);
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .hero-stats {
   display: flex;
   justify-content: center;
   gap: var(--space-10);
-  margin-top: var(--space-10);
+  margin-top: var(--space-12);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--color-border);
 }
 
 .hero-stat {
@@ -67,12 +77,33 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.03em;
 }
 
 .hero-stat-label {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin-top: var(--space-1);
+  font-weight: 500;
+}
+
+/* ── Section Title ── */
+.section-title {
+  margin-bottom: var(--space-6);
+}
+
+.section-title h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.section-title p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 /* ── 路徑圖 (Learning Path) ── */
@@ -81,25 +112,27 @@
   align-items: center;
   justify-content: center;
   gap: 0;
-  margin: var(--space-10) 0;
+  margin: var(--space-8) 0;
   flex-wrap: wrap;
 }
 
 .path-node {
   text-align: center;
-  padding: var(--space-5);
+  padding: var(--space-6) var(--space-5);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   width: 200px;
   transition: all var(--duration-normal) var(--ease-out);
   cursor: pointer;
+  box-shadow: var(--shadow-card);
+  position: relative;
 }
 
 .path-node:hover {
-  border-color: var(--color-accent-primary);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(99, 102, 241, 0.06);
+  transform: translateY(-4px);
 }
 
 .path-node-icon {
@@ -111,12 +144,14 @@
   font-size: var(--text-sm);
   font-weight: 700;
   color: var(--color-text-primary);
+  line-height: 1.4;
 }
 
 .path-node-hours {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  margin-top: var(--space-1);
+  margin-top: var(--space-2);
+  font-weight: 500;
 }
 
 .path-arrow {
@@ -128,32 +163,59 @@
 /* ── 概念頁面 ── */
 .concept-hero {
   display: flex;
-  align-items: center;
-  gap: var(--space-8);
+  align-items: flex-start;
+  gap: var(--space-6);
   margin-bottom: var(--space-10);
   padding: var(--space-8);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: radial-gradient(ellipse at top right,
+    rgba(99, 102, 241, 0.06) 0%,
+    transparent 70%);
+  pointer-events: none;
 }
 
 .concept-icon {
-  font-size: 4rem;
+  font-size: 3.5rem;
   flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(99, 102, 241, 0.15);
 }
 
 .concept-hero h1 {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-3xl);
 }
 
 .concept-hero p {
   font-size: var(--text-base);
+  margin: 0;
+  line-height: 1.7;
 }
 
 /* 生活化比喻區塊 */
 .analogy-block {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   margin: var(--space-8) 0;
@@ -163,11 +225,12 @@
 .analogy-block::before {
   content: '💡';
   position: absolute;
-  top: -16px;
-  left: var(--space-5);
-  font-size: 1.5rem;
+  top: -14px;
+  left: var(--space-6);
+  font-size: 1.25rem;
   background: var(--color-bg-primary);
   padding: 0 var(--space-2);
+  line-height: 1;
 }
 
 .analogy-block .analogy-title {
@@ -175,6 +238,7 @@
   font-weight: 700;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
 }
 
 .analogy-block blockquote {
@@ -192,15 +256,28 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.case-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-accent-gradient);
 }
 
 .case-header .case-num {
   font-size: var(--text-xs);
   color: var(--color-accent-primary);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-2);
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-3);
 }
 
 .case-header h1 {
@@ -209,7 +286,7 @@
 
 .case-header .case-desc {
   font-size: var(--text-base);
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
 }
 
 /* ── 專案頁面 ── */
@@ -219,6 +296,7 @@
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-md);
 }
 
 .project-meta {
@@ -229,7 +307,7 @@
 }
 
 .project-flow {
-  background: var(--color-bg-card);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
@@ -247,12 +325,14 @@
 
 .flow-node {
   padding: var(--space-3) var(--space-4);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
+  font-weight: 600;
   white-space: nowrap;
   text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .flow-arrow {
@@ -267,9 +347,9 @@
 
 .map-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .map-block {
@@ -280,24 +360,27 @@
   text-align: center;
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-card);
 }
 
 .map-block:hover {
-  border-color: var(--color-accent-primary);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(99, 102, 241, 0.06);
+  transform: translateY(-3px);
 }
 
 .map-block-title {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 700;
   color: var(--color-text-primary);
   margin-bottom: var(--space-2);
+  margin-top: var(--space-2);
 }
 
 .map-block-desc {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 .map-connectors {
@@ -306,13 +389,14 @@
   gap: var(--space-10);
   margin: var(--space-2) 0;
   color: var(--color-text-muted);
+  font-size: var(--text-xl);
 }
 
 /* ── 進度頁面 ── */
 .progress-overview {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--space-6);
+  gap: var(--space-5);
   margin: var(--space-8) 0;
 }
 
@@ -321,6 +405,13 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.progress-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .progress-card-title {
@@ -331,9 +422,9 @@
 }
 
 .progress-card-bar {
-  background: var(--color-bg-primary);
+  background: var(--color-surface-2);
   border-radius: var(--radius-full);
-  height: 8px;
+  height: 6px;
   overflow: hidden;
   margin-top: var(--space-3);
 }
@@ -347,9 +438,11 @@
 
 @media (max-width: 768px) {
   .hero h1 { font-size: var(--text-3xl); }
-  .hero-stats { flex-direction: column; gap: var(--space-4); }
-  .learning-path { flex-direction: column; }
+  .hero-stats { flex-direction: column; gap: var(--space-6); }
+  .learning-path { flex-direction: column; align-items: stretch; }
+  .path-node { width: 100%; }
   .path-arrow { transform: rotate(90deg); }
-  .concept-hero { flex-direction: column; text-align: center; }
-  .map-row { grid-template-columns: 1fr; }
+  .concept-hero { flex-direction: column; }
+  .concept-icon { width: 60px; height: 60px; font-size: 2.5rem; }
+  .map-row { grid-template-columns: repeat(2, 1fr); }
 }

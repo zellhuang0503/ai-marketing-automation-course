@@ -107,7 +107,7 @@ const Components = {
 
   // ── Info Box ──
   infoBox(text, type = 'tip') {
-    const icons = { tip: '💡', warning: '⚠️', success: '✅' };
+    const icons = { tip: '💡', warning: '⚠️', success: '✅', info: 'ℹ️' };
     return `<div class="info-box ${type}">${icons[type] || ''} ${text}</div>`;
   },
 
@@ -184,9 +184,9 @@ const Components = {
 
   // ── Section Title ──
   sectionTitle(title, subtitle) {
-    return `<div style="margin-bottom:var(--space-6);">
+    return `<div class="section-title">
       <h2>${title}</h2>
-      ${subtitle ? `<p style="color:var(--color-text-muted);margin:0;">${subtitle}</p>` : ''}
+      ${subtitle ? `<p>${subtitle}</p>` : ''}
     </div>`;
   }
 };
