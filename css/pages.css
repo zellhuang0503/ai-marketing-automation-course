@@ -18,8 +18,8 @@
   width: 700px;
   height: 500px;
   background: radial-gradient(ellipse at center,
-    rgba(99, 102, 241, 0.08) 0%,
-    rgba(139, 92, 246, 0.05) 40%,
+    rgba(13, 148, 136, 0.08) 0%,
+    rgba(8, 145, 178, 0.05) 40%,
     transparent 70%);
   pointer-events: none;
 }
@@ -29,8 +29,8 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.18);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   color: var(--color-accent-primary);
@@ -73,7 +73,7 @@
 .hero-stat-value {
   font-size: var(--text-3xl);
   font-weight: 800;
-  background: var(--color-accent-gradient);
+  background: var(--color-accent-gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -130,8 +130,8 @@
 }
 
 .path-node:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(99, 102, 241, 0.06);
+  border-color: rgba(13, 148, 136, 0.28);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(13, 148, 136, 0.06);
   transform: translateY(-4px);
 }
 
@@ -183,7 +183,7 @@
   width: 300px;
   height: 100%;
   background: radial-gradient(ellipse at top right,
-    rgba(99, 102, 241, 0.06) 0%,
+    rgba(13, 148, 136, 0.06) 0%,
     transparent 70%);
   pointer-events: none;
 }
@@ -196,9 +196,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.10) 0%, rgba(8, 145, 178, 0.08) 100%);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(13, 148, 136, 0.15);
 }
 
 .concept-hero h1 {
@@ -214,8 +214,8 @@
 
 /* 生活化比喻區塊 */
 .analogy-block {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.04) 0%, rgba(8, 145, 178, 0.04) 100%);
+  border: 1px solid rgba(13, 148, 136, 0.15);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   margin: var(--space-8) 0;
@@ -228,7 +228,7 @@
   top: -14px;
   left: var(--space-6);
   font-size: 1.25rem;
-  background: var(--color-bg-primary);
+  background: #FAFAF8;
   padding: 0 var(--space-2);
   line-height: 1;
 }
@@ -364,8 +364,8 @@
 }
 
 .map-block:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(99, 102, 241, 0.06);
+  border-color: rgba(13, 148, 136, 0.28);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(13, 148, 136, 0.06);
   transform: translateY(-3px);
 }
 
@@ -411,7 +411,7 @@
 
 .progress-card:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(99, 102, 241, 0.2);
+  border-color: rgba(13, 148, 136, 0.18);
 }
 
 .progress-card-title {
